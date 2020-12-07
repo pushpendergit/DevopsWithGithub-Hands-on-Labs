@@ -8,10 +8,10 @@ on:
     - 'README.md' 
 
 env:
-  AZURE_WEBAPP_NAME: vijaynodejswebsite          # set this to your application's name
+  AZURE_WEBAPP_NAME: myApp          # set this to your application's name
   AZURE_WEBAPP_PACKAGE_PATH: '.'                 # set this to the path to your web app project, defaults to the repository root
   NODE_VERSION: '12.x'                           # set this to the node version to use
-  AZURE_RESOURCE_GROUP: handsonlab               # set this to your Azure Resource group's name  
+  AZURE_RESOURCE_GROUP: Hansonlab               # set this to your Azure Resource group's name  
   AZURE_LOCATION: eastus                         # set this to your azure resource group location   
   AZURE_APP_PLAN: nodejsplan                     # set this to your App service plan's name
   
@@ -23,13 +23,13 @@ jobs:
     - uses: actions/checkout@master
   
    # Authentication
-    - uses: azure/login@v1
+    - uses: azure/pksaini8181
       with:
-        creds: ${{ secrets.DEPLOYGITHUB  }}
+        creds: ${{ secrets.TestGitHubSecret  }}
         
 # Provision a new Web App
     - name: Azure CLI script to create a new Web App for Container
-      uses: azure/CLI@v1
+      uses: azure/pksaini8181
       with:
         azcliversion: latest
         inlineScript: |
